@@ -1,0 +1,441 @@
+/* =========================
+   VARIÁVEIS (IDENTIDADE)
+========================= */
+:root {
+  --bg-dark: #0f0f14;
+  --bg-dark-2: #14141c;
+  --card-dark: #1a1a22;
+
+  --purple-main: #8b5cf6;
+  --pink-accent: #ec4899;
+
+  --text-light: #f5f5f5;
+  --text-muted: #b5b5c0;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+  color: var(--text-light);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  background: rgba(15, 15, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  gap: 30px;
+}
+
+.logo img {
+  width: 90px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple-main), var(--pink-accent));
+  transition: width 1s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   1. VARIÁVEIS E RESET
+   ========================================= */
+:root {
+  /* Paleta Videira */
+  --primary-color: rgb(119, 14, 119);
+  --secondary-color: rgb(234, 0, 255);
+  --gradient-brand: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+  /* Cores de Fundo e Texto */
+  --bg-body: #f2f5f9;
+  --bg-card: #1a1a1d;
+  /* Fundo escuro para os cartões */
+  --text-main: #2d3436;
+  --text-light: #ffffff;
+  --text-muted: #a0a0a0;
+
+  /* Espaçamentos e Bordas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 15px -3px rgba(119, 14, 119, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+h2,
+h4 {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  margin-top: 8vh;
+}
+
+.pdfs {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pdfs>h2 {
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+  -webkit-text-fill-color: initial;
+  color: var(--primary-color);
+}
+
+.mes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  align-items: stretch;
+}
+
+/* O título do mês sai do fluxo do grid de colunas e ocupa a linha inteira */
+.mes h4 {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   5. CARTÕES (.pdf-card)
+   ========================================= */
+.pdf-card {
+  background-color: var(--bg-card);
+  /* Fundo escuro */
+  color: var(--text-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #2d2d33;
+  /* Borda sutil para definição */
+  overflow: hidden;
+}
+
+/* Efeito decorativo de gradiente no topo do card */
+.pdf-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+.pdf-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Data dentro do card */
+.pdf-card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+/* Ícone de calendário simulado com CSS antes da data */
+.pdf-card p::before {
+  content: '📅';
+  /* Ou pode usar um SVG se pudesse alterar o HTML */
+  margin-right: 8px;
+  font-size: 0.9em;
+  filter: grayscale(1);
+  /* Deixa o emoji monocromático */
+}
+
+/* Botão de download */
+.pdf-card a {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  /* Fundo translúcido */
+  color: var(--text-light);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  text-align: center;
+}
+
+.pdf-card a:hover {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: 0 4px 10px rgba(234, 0, 255, 0.3);
+}
+
+/* Deixar responsivo */
+@media (max-width: 768px) {
+
+  /* --- Base --- */
+  body {
+    padding-bottom: 60px;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 35px;
+  }
+
+  /* --- Topo e Menu App --- */
+  .navbar {
+    padding: 8px 0;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .logo img {
+    width: 65px;
+    margin-bottom: 30px;
+  }
+
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(15, 15, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    z-index: 1000;
+    padding: 0 3px;
+  }
+
+  .menu a {
+    font-size: 9px;
+    text-align: center;
+    padding: 6px 1px;
+  }
+
+  .menu a::after {
+    display: none;
+  }
+
+
+
+  /* --- Footer --- */
+  footer {
+    margin-top: 35px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 10px;
+    gap: 20px;
+  }
+
+  .footer h2,
+  .footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-identidade p,
+  .footer-copy {
+    font-size: 11px;
+  }
+
+  .footer-nav a,
+  .footer-locais a,
+  .footer-redes a {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .social {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .youtube,
+  .instagram {
+    width: 90%;
+  }
+
+  .arrow.left {
+    left: -20px;
+  }
+
+  .arrow.right {
+    right: -20px;
+  }
+}

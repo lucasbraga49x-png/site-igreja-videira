@@ -1,0 +1,468 @@
+:root {
+
+    --bg-dark: #0f0f14;
+    --bg-dark-2: #14141c;
+    --card-dark: #1a1a22;
+    --footer-bg-1: #0f0f0f;
+    --footer-bg-2: #1a1a1a;
+
+
+    --purple-main: #8b5cf6;
+    --pink-accent: #ec4899;
+    --footer-accent-1: #e100ff;
+    --footer-accent-2: #00b3ff;
+    --footer-accent-3: #ff0055;
+
+
+    --text-light: #f5f5f5;
+    --text-muted: #b5b5c0;
+    --text-footer: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+    color: var(--text-light);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Menu */
+nav {
+    background: rgba(15, 15, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    gap: 30px;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple-main), var(--pink-accent));
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Tela do cursão e ctl */
+.cursos-container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px; 
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto; 
+}
+
+
+.Tela-Cursao, 
+.Tela-CTL {
+    width: 100%;
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Tela-Cursao h1, 
+.Tela-CTL h1 {
+    color: var(--purple-main);
+}
+
+
+.Tela-Cadastro {
+    background: rgba(15, 15, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    width: 100%; 
+    max-width: 450px; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nome-ipt,
+.idade-ipt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.inputs input {
+    height: 35px;
+    padding: 5px;
+    color: var(--purple-main);
+    font-size: 16px;
+    background-color: #1a1a1a00;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--purple-main);
+}
+
+/* Remove setas no Chrome, Edge, Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove setas no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes button {
+    width: 50%;
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+    transition: 0.8s;
+}
+
+.botoes button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
+    background: linear-gradient(135deg, #6b47c0, #bd397b);
+}
+
+.links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links p{
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 700;
+}
+.links a{
+    color: var(--purple-main);
+    text-decoration: none;
+    transition: 0.6s;
+    font-weight: 700;
+}
+.links a:hover{
+    color: #bd397b;
+}
+
+
+/* Tabelas */
+#cadastrados-tabela,
+#cadastrados-tabela2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+#cadastrados-tabela th,
+#cadastrados-tabela2 th {
+    background-color: #6a11cb;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Linhas da tabela */
+#cadastrados-tabela td,
+#cadastrados-tabela2 td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Efeito ao passar o mouse */
+#cadastrados-tabela tr:hover,
+#cadastrados-tabela2 tr:hover {
+    background-color: #5755553d;
+}
+
+/* Linhas alternadas (efeito zebra) */
+#cadastrados-tabela tr:nth-child(even) #cadastrados-tabela2 tr:nth-child(even) {
+    background-color: #47474731;
+}
+
+/* Botões dentro da tabela */
+#cadastrados-tabela button,
+#cadastrados-tabela2 button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #ff4d4d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#cadastrados-tabela button:hover,
+#cadastrados-tabela2 button:hover {
+    background: #cc0000;
+}
+
+.tela-cadastro-tabela {
+    width: 100%;
+    display: flex;
+    gap: 100px;
+}
+
+.tabela {
+    width: 60%;
+}
+
+/* Roda-pé */
+footer {
+    background: linear-gradient(180deg, var(--footer-bg-1), var(--footer-bg-2));
+    color: var(--text-footer);
+    margin-top: 100px;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-identidade,
+.footer-nav,
+.footer-locais,
+.footer-redes {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer h2,
+.footer h3 {
+    color: var(--footer-accent-1);
+    margin-bottom: 14px;
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-identidade p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li,
+.footer-locais .local,
+.footer-redes a {
+    margin-bottom: 8px;
+}
+
+.footer-nav a,
+.footer-locais a,
+.footer-redes a {
+    text-decoration: none;
+    color: var(--text-footer);
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-nav a:hover {
+    color: var(--footer-accent-1);
+}
+
+.footer-locais a:hover {
+    color: var(--footer-accent-2);
+}
+
+.footer-redes a:hover {
+    color: var(--footer-accent-3);
+}
+
+.footer-copy {
+    border-top: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE) - AULAS E MATRÍCULA
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- Base --- */
+    body {
+        padding-bottom: 60px;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin-top: 35px;
+    }
+
+    /* --- Topo e Menu App --- */
+    .navbar {
+        padding: 8px 0;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .logo img {
+        width: 65px;
+        margin-bottom: 30px;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: rgba(15, 15, 20, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        z-index: 1000;
+        padding: 0 3px;
+    }
+
+    .menu a {
+        font-size: 9px;
+        text-align: center;
+        padding: 6px 1px;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    /* --- SESSÃO DE CURSOS E MATRÍCULA (MOBILE) --- */
+    .cursos-container {
+        flex-direction: column; /* Empilha os cursos um embaixo do outro */
+        gap: 50px; /* Dá um respiro entre um formulário e outro */
+        padding: 30px 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Tela-Cursao, 
+    .Tela-CTL {
+        width: 80%;
+        gap: 15px;
+    }
+
+    .Tela-Cadastro {
+        width: 100%;
+        max-width: 100%; /* Permite que ocupe a tela toda no celular */
+        padding: 25px 20px; /* Diminui o espaço interno para não espremer os inputs */
+        gap: 25px;
+    }
+
+    .botoes button {
+        width: 100%; /* Botão largo para ficar fácil de clicar com o dedão */
+        max-width: 280px;
+    }
+
+    /* --- Footer --- */
+    footer {
+        margin-top: 35px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 10px;
+        gap: 20px;
+    }
+
+    .footer h2,
+    .footer h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .footer-identidade p,
+    .footer-copy {
+        font-size: 11px;
+    }
+
+    .footer-nav a,
+    .footer-locais a,
+    .footer-redes a {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+}

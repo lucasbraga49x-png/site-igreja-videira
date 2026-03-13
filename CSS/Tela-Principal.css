@@ -1,0 +1,666 @@
+:root {
+
+    --bg-dark: #0f0f14;
+    --bg-dark-2: #14141c;
+    --card-dark: #1a1a22;
+    --footer-bg-1: #0f0f0f;
+    --footer-bg-2: #1a1a1a;
+
+
+    --purple-main: #8b5cf6;
+    --pink-accent: #ec4899;
+    --footer-accent-1: #e100ff;
+    --footer-accent-2: #00b3ff;
+    --footer-accent-3: #ff0055;
+
+
+    --text-light: #f5f5f5;
+    --text-muted: #b5b5c0;
+    --text-footer: #ccc;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+    color: var(--text-light);
+}
+
+h3 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+nav {
+    background: rgba(15, 15, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 0;
+    margin-bottom: 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    gap: 30px;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple-main), var(--pink-accent));
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Seção de Boa Vindas! */
+.boas-vindas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 60px;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cabecalho h1 {
+    color: var(--purple-main);
+    text-align: center;
+}
+
+.cabecalho p {
+    color: var(--text-muted);
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.botoes button {
+    width: 30%;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+    transition: 0.3s;
+}
+
+.botoes button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+}
+
+
+.aulas,
+.visao {
+    width: 90%;
+    margin: 100px auto;
+    background: linear-gradient(180deg, var(--card-dark), var(--bg-dark-2));
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.aulas h3 {
+    color: var(--purple-main);
+    margin-top: 0;
+}
+
+.aulas p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.visao p {
+    color: var(--text-muted);
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.youtube,
+.instagram {
+    width: 30%;
+    min-height: 240px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.youtube {
+    background: linear-gradient(180deg, #2b2b2b, #0f0f0f);
+}
+
+.instagram {
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+}
+
+.youtube img,
+.instagram img {
+    width: 140px;
+}
+
+.youtube a,
+.instagram a {
+    margin-top: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =========================================
+   SEÇÃO: EQUIPE PASTORAL (CARROSSEL)
+   ========================================= */
+
+/* Ajuste específico para o título da seção */
+h3.equipe-titulo {
+    text-align: center;
+    margin-top: 100px;
+    /* Aumentei um pouco o espaço superior */
+    margin-bottom: 20px;
+    /* Espaço até o carrossel */
+    font-size: 2.2rem;
+    color: var(--text-light);
+}
+
+/* 1. Contêiner Principal: Controla a largura na página e o espaço das setas */
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    /* Aumentei um pouco para mostrar mais pastores em telas grandes */
+    margin: 0 auto 80px auto;
+    /* Centralizado, espaço inferior */
+    padding: 0 60px;
+    /* Importante! Cria espaço SEGURO dentro para as setas */
+}
+
+/* 2. Visualizador (Viewport): Recorta o conteúdo que transborda */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    /* Esconde os cards que saem da área visível */
+    padding: 20px 0;
+    /* Espaço superior/inferior para o efeito de hover não cortar o card */
+}
+
+/* 3. A Trilha (Track): A lista longa que desliza */
+.carousel-track {
+    display: flex;
+    align-items: center;
+    /* Centraliza os cards verticalmente */
+    gap: 25px;
+    /* Espaço uniforme entre os cartões */
+    transition: transform 0.4s ease-in-out;
+    /* Transição suave */
+}
+
+/* =========================================
+   AS SETAS (BOTÕES)
+   ========================================= */
+.arrow {
+    position: absolute;
+    top: 50%;
+    /* Centraliza verticalmente no meio da trilha */
+    transform: translateY(-50%);
+    /* Ajuste fino da centralização vertical */
+    background: var(--card-dark);
+    color: var(--text-light);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 14px 18px;
+    /* Optimized padding */
+    border-radius: 50%;
+    z-index: 10;
+    /* Garante que fique acima dos cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.arrow:hover {
+    background: var(--purple-main);
+    /* Cor de destaque ao passar o mouse */
+    transform: translateY(-50%) scale(1.1);
+    /* Efeito de pulso leve */
+}
+
+/* Posiciona as setas DENTRO do padding do contêiner principal */
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* =========================================
+   OS CARTÕES (CARDS)
+   ========================================= */
+.card {
+    /* CORREÇÃO CHAVE: flex-grow:0, flex-shrink:0, flex-basis:230px */
+    flex: 0 0 230px;
+    /* Garante que os cards NUNCA diminuam e tenham 230px de largura */
+
+    height: 280px;
+    /* Altura fixa para consistência */
+    background: linear-gradient(180deg, var(--card-dark), var(--bg-dark-2));
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Mantendo seus excelentes efeitos de hover */
+.card:hover {
+    transform: translateY(-8px);
+    /* Sobe um pouco mais */
+    box-shadow: 0 0 0 2px var(--purple-main),
+        0 20px 40px rgba(139, 92, 246, 0.3);
+}
+
+.avatar {
+    width: 130px;
+    /* Um pouco maior */
+    height: 130px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.aula-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.aula-btn button {
+    width: 220px;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+    transition: 0.3s;
+}
+
+.aula-btn button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+}
+
+footer {
+    background: linear-gradient(180deg, var(--footer-bg-1), var(--footer-bg-2));
+    color: var(--text-footer);
+    margin-top: 100px;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-identidade,
+.footer-nav,
+.footer-locais,
+.footer-redes {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer h2,
+.footer h3 {
+    color: var(--footer-accent-1);
+    margin-bottom: 14px;
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-identidade p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li,
+.footer-locais .local,
+.footer-redes a {
+    margin-bottom: 8px;
+}
+
+.footer-nav a,
+.footer-locais a,
+.footer-redes a {
+    text-decoration: none;
+    color: var(--text-footer);
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-nav a:hover {
+    color: var(--footer-accent-1);
+}
+
+.footer-locais a:hover {
+    color: var(--footer-accent-2);
+}
+
+.footer-redes a:hover {
+    color: var(--footer-accent-3);
+}
+
+.footer-copy {
+    border-top: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* Deixar responsivo */
+@media (max-width: 768px) {
+
+    /* --- Base --- */
+    body {
+        padding-bottom: 60px;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin-top: 35px;
+    }
+
+    /* --- Topo e Menu App --- */
+    .navbar {
+        padding: 8px 0;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .logo img {
+        width: 65px;
+        margin-bottom: 30px;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: rgba(15, 15, 20, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        z-index: 1000;
+        padding: 0 3px;
+    }
+
+    .menu a {
+        font-size: 9px;
+        text-align: center;
+        padding: 6px 1px;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    /* --- Seção de Boas-Vindas --- */
+    .boas-vindas {
+        margin-bottom: 35px;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.6rem;
+    }
+
+    .cabecalho p {
+        font-size: 0.85rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .botoes button,
+    .aula-btn button {
+        width: 100%;
+        max-width: 260px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    /* --- Seções Aulas e Visão --- */
+    .aulas,
+    .visao {
+        width: 96%;
+        margin: 25px auto;
+        padding: 15px 10px;
+    }
+
+    .aulas p {
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+
+    .visao p {
+        font-size: 0.95rem;
+    }
+
+    /* --- Redes Sociais --- */
+    .social {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .youtube,
+    .instagram {
+        width: 100%;
+        max-width: 300px;
+        min-height: 120px;
+    }
+
+    .youtube img,
+    .instagram img {
+        width: 60px;
+    }
+
+    .youtube a,
+    .instagram a {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+
+    /* --- Carrossel (Equipe Pastoral) --- */
+    h3.equipe-titulo {
+        margin-top: 35px;
+        margin-bottom: 8px;
+    }
+
+    .carousel-track {
+        padding: 10px;
+    }
+
+    .carousel-container {
+        width: 50%;
+        padding: 0 25px;
+        margin: 0 auto 25px auto;
+        /* Centralização garantida aqui! */
+    }
+
+    .card {
+        flex: 0 0 100%;
+        height: 180px;
+        padding: 10px;
+    }
+
+    .avatar {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 8px;
+        padding: 2px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow.left {
+        left: 0;
+    }
+
+    .arrow.right {
+        right: 0;
+    }
+
+    /* --- Footer --- */
+    footer {
+        margin-top: 35px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 10px;
+        gap: 20px;
+    }
+
+    .footer h2,
+    .footer h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .footer-identidade p,
+    .footer-copy {
+        font-size: 11px;
+    }
+
+    .footer-nav a,
+    .footer-locais a,
+    .footer-redes a {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+}
