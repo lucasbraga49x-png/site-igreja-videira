@@ -1,0 +1,423 @@
+/* =========================
+   VARIÁVEIS (PADRÃO DO SITE)
+========================= */
+:root {
+  --bg-dark: #0f0f14;
+  --bg-dark-2: #14141c;
+  --card-dark: #1a1a22;
+  --footer-bg-1: #0f0f0f;
+  --footer-bg-2: #1a1a1a;
+
+  --purple-main: #8b5cf6;
+  --pink-accent: #ec4899;
+  --footer-accent-1: #e100ff;
+  --footer-accent-2: #00b3ff;
+  --footer-accent-3: #ff0055;
+
+  --text-light: #f5f5f5;
+  --text-muted: #b5b5c0;
+  --text-footer: #ccc;
+
+  /* Específicos dos cards de PDF */
+  --radius-md: 12px;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 25px rgba(139, 92, 246, 0.3);
+
+  /* Cor transparente */
+  --cor-transparente: rgba(0, 0, 0, 0);
+}
+
+/* =========================
+   RESET E BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+  color: var(--text-light);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Campo de preencher */
+.campo-geral {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tela {
+  background-color: var(--card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.3s ease;
+}
+
+.tela:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.tela h1 {
+  color: var(--purple-main);
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mes-ipt,
+.pdf-ipt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mes-ipt label,
+.pdf-ipt label {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.mes-ipt input,
+.pdf-ipt input {
+  width: 100%;
+  background-color: var(--bg-dark-2);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.mes-ipt input:focus,
+.pdf-ipt input:focus {
+  border-color: var(--purple-main);
+  color: var(--text-light);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+
+.mes-ipt input[type="date"] {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+
+.pdf-ipt input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pdf-ipt input[type="file"]::file-selector-button {
+  background-color: var(--purple-main);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-right: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pdf-ipt input[type="file"]::file-selector-button:hover {
+  background-color: var(--pink-accent);
+}
+
+.botao {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.botao button {
+  width: 90%;
+  height: 40px;
+  background-color: var(--purple-main);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-right: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao button:hover {
+  background-color: var(--pink-accent);
+}
+
+/* =========================================
+   SEÇÃO DOS PDFs (NOTÍCIAS)
+   ========================================= */
+.pdfs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* Impede de encostar na borda da tela */
+}
+
+.pdfs>h2 {
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+  color: var(--purple-main);
+  font-size: 2.2rem;
+}
+
+.mes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  align-items: stretch;
+}
+
+/* O título do mês ocupa a linha inteira */
+.mes h4 {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  color: var(--pink-accent);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Cartões */
+.pdf-card {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+/* Barra colorida no topo do card */
+.pdf-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple-main), var(--pink-accent));
+}
+
+.pdf-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.pdf-card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+
+.pdf-card p::before {
+  margin-right: 8px;
+  font-size: 0.9em;
+}
+
+/* Botão de download */
+.pdf-card a {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+.pdf-card a:hover {
+  background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+
+@media (max-width: 768px) {
+
+  /* --- Base --- */
+  body {
+    padding-bottom: 60px;
+    /* Espaço para o menu inferior */
+  }
+
+  /* --- Topo e Menu App (Fixo Embaixo) --- */
+  .navbar {
+    padding: 8px 0;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 30px;
+  }
+
+  .logo img {
+    width: 65px;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(15, 15, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    z-index: 1000;
+    padding: 0 3px;
+  }
+
+  .menu a {
+    font-size: 9px;
+    text-align: center;
+    padding: 6px 1px;
+  }
+
+  .menu a::after {
+    display: none;
+  }
+
+  /* ==========================================
+     NOVO: ÁREA DO FORMULÁRIO RESPONSIVA
+     ========================================== */
+  .campo-geral {
+    padding: 15px; /* Reduz margens laterais na tela toda */
+  }
+
+  .tela {
+    padding: 20px; /* Reduz o espaçamento interno do card */
+    gap: 15px; /* Aproxima mais os elementos do formulário */
+  }
+
+  .tela h1 {
+    font-size: 1.5rem; /* Reduz o tamanho do título "Publicar PDF" */
+  }
+
+  .mes-ipt input,
+  .pdf-ipt input {
+    padding: 10px 12px; /* Deixa as caixas de input um pouco mais compactas */
+    font-size: 0.9rem;
+  }
+
+  .pdf-ipt input[type="file"]::file-selector-button {
+    padding: 6px 12px; /* Botão de escolher arquivo menorzinho */
+    margin-right: 10px;
+    font-size: 0.85rem;
+  }
+
+  .botao button {
+    width: 100%; /* Garante que o botão de publicar ocupe toda a largura disponível */
+  }
+  /* ========================================== */
+
+  /* --- Área de PDFs Responsiva --- */
+  .pdfs>h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .mes {
+    grid-template-columns: 1fr;
+    /* Força 1 coluna apenas no celular */
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .mes h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .pdf-card {
+    padding: 1.2rem;
+  }
+
+  /* --- Footer --- */
+  footer {
+    margin-top: 40px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 10px;
+    gap: 20px;
+  }
+
+  .footer h2,
+  .footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-identidade p,
+  .footer-copy {
+    font-size: 11px;
+  }
+
+  .footer-nav a,
+  .footer-locais a,
+  .footer-redes a {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+}

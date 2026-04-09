@@ -1,0 +1,97 @@
+:root {
+
+    --bg-dark: #0f0f14;
+    --bg-dark-2: #14141c;
+    --card-dark: #1a1a22;
+    --footer-bg-1: #0f0f0f;
+    --footer-bg-2: #1a1a1a;
+
+
+    --purple-main: #8b5cf6;
+    --pink-accent: #ec4899;
+    --footer-accent-1: #e100ff;
+    --footer-accent-2: #00b3ff;
+    --footer-accent-3: #ff0055;
+
+
+    --text-light: #f5f5f5;
+    --text-muted: #b5b5c0;
+    --text-footer: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+    color: var(--text-light);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cadastrados-tabela,
+#cadastrados-tabela2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+#cadastrados-tabela th,
+#cadastrados-tabela2 th {
+    background-color: #6a11cb;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Linhas da tabela */
+#cadastrados-tabela td,
+#cadastrados-tabela2 td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Efeito ao passar o mouse */
+#cadastrados-tabela tr:hover,
+#cadastrados-tabela2 tr:hover {
+    background-color: #5755553d;
+}
+
+/* Linhas alternadas (efeito zebra) */
+#cadastrados-tabela tr:nth-child(even) #cadastrados-tabela2 tr:nth-child(even) {
+    background-color: #47474731;
+}
+
+/* Botões dentro da tabela */
+#cadastrados-tabela button,
+#cadastrados-tabela2 button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #ff4d4d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#cadastrados-tabela button:hover,
+#cadastrados-tabela2 button:hover {
+    background: #cc0000;
+}
+
+.tela-cadastro-tabela {
+    width: 100%;
+    display: flex;
+    gap: 100px;
+}
+
+.tabela {
+    width: 60%;
+}

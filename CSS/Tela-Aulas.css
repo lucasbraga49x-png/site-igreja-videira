@@ -1,0 +1,277 @@
+:root {
+
+    --bg-dark: #0f0f14;
+    --bg-dark-2: #14141c;
+    --card-dark: #1a1a22;
+    --footer-bg-1: #0f0f0f;
+    --footer-bg-2: #1a1a1a;
+
+
+    --purple-main: #8b5cf6;
+    --pink-accent: #ec4899;
+    --footer-accent-1: #e100ff;
+    --footer-accent-2: #00b3ff;
+    --footer-accent-3: #ff0055;
+
+
+    --text-light: #f5f5f5;
+    --text-muted: #b5b5c0;
+    --text-footer: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+    color: var(--text-light);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Tela do cursão e ctl */
+.cursos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.Tela-Cursao,
+.Tela-CTL {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Tela-Cursao h1,
+.Tela-CTL h1 {
+    color: var(--purple-main);
+}
+
+
+.Tela-Cadastro {
+    background-color: var(--card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nome-ipt,
+.idade-ipt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.inputs input {
+    height: 35px;
+    padding: 5px;
+    color: var(--purple-main);
+    font-size: 16px;
+    background-color: #1a1a1a00;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--purple-main);
+}
+
+/* Remove setas no Chrome, Edge, Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove setas no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes button {
+    width: 50%;
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
+    transition: 0.8s;
+}
+
+.botoes button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
+    background: linear-gradient(135deg, #6b47c0, #bd397b);
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links p {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.links a {
+    color: var(--purple-main);
+    text-decoration: none;
+    transition: 0.6s;
+    font-weight: 700;
+}
+
+.links a:hover {
+    color: #bd397b;
+}
+
+
+@media (max-width: 768px) {
+
+    /* --- Base --- */
+    body {
+        padding-bottom: 60px;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin-top: 35px;
+    }
+
+    /* --- Topo e Menu App --- */
+    .navbar {
+        padding: 8px 0;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .logo img {
+        width: 65px;
+        margin-bottom: 30px;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: rgba(15, 15, 20, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        z-index: 1000;
+        padding: 0 3px;
+    }
+
+    .menu a {
+        font-size: 9px;
+        text-align: center;
+        padding: 6px 1px;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+
+    .cursos-container {
+        flex-direction: column;
+        gap: 50px;
+        padding: 30px 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Tela-Cursao,
+    .Tela-CTL {
+        width: 80%;
+        gap: 15px;
+    }
+
+    .Tela-Cadastro {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 20px;
+        gap: 25px;
+    }
+
+    .botoes button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* --- Footer --- */
+    footer {
+        margin-top: 35px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 10px;
+        gap: 20px;
+    }
+
+    .footer h2,
+    .footer h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .footer-identidade p,
+    .footer-copy {
+        font-size: 11px;
+    }
+
+    .footer-nav a,
+    .footer-locais a,
+    .footer-redes a {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+}
