@@ -1,0 +1,7 @@
+{
+    "pastores": [
+        {"avatar":"./IMG/pastorGerson.png", "nome":"Pastor Gerson"},
+        {"avatar":"./IMG/pastorAlmirDias.png", "nome":"Pastor Almir Dias"},
+        {"avatar":"./IMG/pastorJean.png", "nome":"Pastor Jean Dias"}
+    ]
+}
