@@ -1,18 +1,15 @@
 :root {
-
     --bg-dark: #0f0f14;
     --bg-dark-2: #14141c;
     --card-dark: #1a1a22;
     --footer-bg-1: #0f0f0f;
     --footer-bg-2: #1a1a1a;
 
-
     --purple-main: #8b5cf6;
     --pink-accent: #ec4899;
     --footer-accent-1: #e100ff;
     --footer-accent-2: #00b3ff;
     --footer-accent-3: #ff0055;
-
 
     --text-light: #f5f5f5;
     --text-muted: #b5b5c0;
@@ -32,7 +29,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Tela do cursão e ctl */
 .cursos-container {
     display: flex;
     flex-direction: row;
@@ -43,7 +39,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
 }
-
 
 .Tela-Cursao,
 .Tela-CTL {
@@ -59,7 +54,6 @@ body {
 .Tela-CTL h1 {
     color: var(--purple-main);
 }
-
 
 .Tela-Cadastro {
     background-color: var(--card-dark);
@@ -92,29 +86,33 @@ body {
 }
 
 .inputs input {
-    height: 35px;
+    height: 45px;
     padding: 5px;
     color: var(--purple-main);
-    font-size: 16px;
-    background-color: #1a1a1a00;
+    font-size: 15px;
+    background-color: var(--bg-dark-2);
+    border-radius: 10px;
     outline: none;
     border: none;
-    border-bottom: 1px solid var(--purple-main);
+    transition: 0.4s;
+}
+.inputs input:hover{
+    background-color: var(--bg-dark);
+}
+.inputs input:focus{
+    box-shadow: 0 0 0 2px var(--purple-main);
+    border: none;
 }
 
-/* Remove setas no Chrome, Edge, Safari */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Remove setas no Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
-
 
 .botoes {
     width: 100%;
@@ -133,13 +131,11 @@ input[type="number"] {
     border-radius: 20px;
     cursor: pointer;
     background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
-    transition: 0.8s;
+    transition: 0.3s;
 }
 
 .botoes button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
-    background: linear-gradient(135deg, #6b47c0, #bd397b);
+    filter: brightness(1.15);
 }
 
 .links {
@@ -158,120 +154,10 @@ input[type="number"] {
 .links a {
     color: var(--purple-main);
     text-decoration: none;
-    transition: 0.6s;
+    transition: 0.3s;
     font-weight: 700;
 }
 
 .links a:hover {
     color: #bd397b;
-}
-
-
-@media (max-width: 768px) {
-
-    /* --- Base --- */
-    body {
-        padding-bottom: 60px;
-    }
-
-    h3 {
-        font-size: 1.4rem;
-        margin-top: 35px;
-    }
-
-    /* --- Topo e Menu App --- */
-    .navbar {
-        padding: 8px 0;
-        justify-content: center;
-        gap: 0;
-    }
-
-    .logo img {
-        width: 65px;
-        margin-bottom: 30px;
-    }
-
-    .menu {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: rgba(15, 15, 20, 0.95);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        gap: 0;
-        z-index: 1000;
-        padding: 0 3px;
-    }
-
-    .menu a {
-        font-size: 9px;
-        text-align: center;
-        padding: 6px 1px;
-    }
-
-    .menu a::after {
-        display: none;
-    }
-
-
-    .cursos-container {
-        flex-direction: column;
-        gap: 50px;
-        padding: 30px 15px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .Tela-Cursao,
-    .Tela-CTL {
-        width: 80%;
-        gap: 15px;
-    }
-
-    .Tela-Cadastro {
-        width: 100%;
-        max-width: 100%;
-        padding: 25px 20px;
-        gap: 25px;
-    }
-
-    .botoes button {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    /* --- Footer --- */
-    footer {
-        margin-top: 35px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 10px;
-        gap: 20px;
-    }
-
-    .footer h2,
-    .footer h3 {
-        font-size: 1.1rem;
-        margin-bottom: 6px;
-    }
-
-    .footer-identidade p,
-    .footer-copy {
-        font-size: 11px;
-    }
-
-    .footer-nav a,
-    .footer-locais a,
-    .footer-redes a {
-        font-size: 0.85rem;
-        margin-bottom: 5px;
-    }
 }

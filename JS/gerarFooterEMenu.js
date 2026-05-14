@@ -10,6 +10,7 @@ function Gerador(){
       <div class="logo">
         <img src="../IMG/logovid.png " alt="logo">
       </div>
+      <div class="campo-interativo">
       <div class="menu">
         <a href="../index.html">Início</a>
         <a href="../HTML/Vid-Noticias.html">Vid Notícias</a>
@@ -17,6 +18,10 @@ function Gerador(){
         <a href="../HTML/Tela-Eventos.html">Eventos</a>
         <a href="../HTML/Tela-Conferencia.html">Conferências</a>
       </div>
+       <div class="login">
+         <a href="../HTML/login.html"> <img src="../IMG/login-imagem.png" alt="Foto"> Login do Administrador</a>
+       </div>
+       </div>
     </div>
    `
    rodape.innerHTML = ""

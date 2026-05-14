@@ -18,18 +18,13 @@
   --text-muted: #b5b5c0;
   --text-footer: #ccc;
 
-  /* Específicos dos cards de PDF */
   --radius-md: 12px;
   --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 10px 25px rgba(139, 92, 246, 0.3);
 
-  /* Cor transparente */
   --cor-transparente: rgba(0, 0, 0, 0);
 }
 
-/* =========================
-   RESET E BASE
-========================= */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +38,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Campo de preencher */
+
 .campo-geral {
   width: 100%;
   display: flex;
@@ -181,14 +176,11 @@ form {
   background-color: var(--pink-accent);
 }
 
-/* =========================================
-   SEÇÃO DOS PDFs (NOTÍCIAS)
-   ========================================= */
 .pdfs {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  /* Impede de encostar na borda da tela */
+ 
 }
 
 .pdfs>h2 {
@@ -207,7 +199,6 @@ form {
   align-items: stretch;
 }
 
-/* O título do mês ocupa a linha inteira */
 .mes h4 {
   grid-column: 1 / -1;
   font-size: 1.5rem;
@@ -218,7 +209,6 @@ form {
   margin-bottom: 1.5rem;
 }
 
-/* Cartões */
 .pdf-card {
   background-color: var(--card-dark);
   color: var(--text-light);
@@ -235,7 +225,6 @@ form {
   overflow: hidden;
 }
 
-/* Barra colorida no topo do card */
 .pdf-card::before {
   content: '';
   position: absolute;
@@ -266,7 +255,6 @@ form {
   font-size: 0.9em;
 }
 
-/* Botão de download */
 .pdf-card a {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.05);
@@ -285,139 +273,4 @@ form {
   background: linear-gradient(135deg, var(--purple-main), var(--pink-accent));
   border-color: transparent;
   box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
-}
-
-
-@media (max-width: 768px) {
-
-  /* --- Base --- */
-  body {
-    padding-bottom: 60px;
-    /* Espaço para o menu inferior */
-  }
-
-  /* --- Topo e Menu App (Fixo Embaixo) --- */
-  .navbar {
-    padding: 8px 0;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 30px;
-  }
-
-  .logo img {
-    width: 65px;
-    margin-bottom: 20px;
-  }
-
-  .menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: rgba(15, 15, 20, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0;
-    z-index: 1000;
-    padding: 0 3px;
-  }
-
-  .menu a {
-    font-size: 9px;
-    text-align: center;
-    padding: 6px 1px;
-  }
-
-  .menu a::after {
-    display: none;
-  }
-
-  /* ==========================================
-     NOVO: ÁREA DO FORMULÁRIO RESPONSIVA
-     ========================================== */
-  .campo-geral {
-    padding: 15px; /* Reduz margens laterais na tela toda */
-  }
-
-  .tela {
-    padding: 20px; /* Reduz o espaçamento interno do card */
-    gap: 15px; /* Aproxima mais os elementos do formulário */
-  }
-
-  .tela h1 {
-    font-size: 1.5rem; /* Reduz o tamanho do título "Publicar PDF" */
-  }
-
-  .mes-ipt input,
-  .pdf-ipt input {
-    padding: 10px 12px; /* Deixa as caixas de input um pouco mais compactas */
-    font-size: 0.9rem;
-  }
-
-  .pdf-ipt input[type="file"]::file-selector-button {
-    padding: 6px 12px; /* Botão de escolher arquivo menorzinho */
-    margin-right: 10px;
-    font-size: 0.85rem;
-  }
-
-  .botao button {
-    width: 100%; /* Garante que o botão de publicar ocupe toda a largura disponível */
-  }
-  /* ========================================== */
-
-  /* --- Área de PDFs Responsiva --- */
-  .pdfs>h2 {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-
-  .mes {
-    grid-template-columns: 1fr;
-    /* Força 1 coluna apenas no celular */
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .mes h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-  }
-
-  .pdf-card {
-    padding: 1.2rem;
-  }
-
-  /* --- Footer --- */
-  footer {
-    margin-top: 40px;
-  }
-
-  .footer {
-    flex-direction: column;
-    text-align: center;
-    padding: 25px 10px;
-    gap: 20px;
-  }
-
-  .footer h2,
-  .footer h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-  }
-
-  .footer-identidade p,
-  .footer-copy {
-    font-size: 11px;
-  }
-
-  .footer-nav a,
-  .footer-locais a,
-  .footer-redes a {
-    font-size: 0.85rem;
-    margin-bottom: 5px;
-  }
 }
